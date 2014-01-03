@@ -18,7 +18,7 @@ Now we run `ruby generate.rb users.json users_table` and we get the following ou
 ```
 ADD JAR hive-json-serde-0.2.jar;
 
-CREATE TABLE test (
+CREATE TABLE users_table (
 id TINYINT,
 name STRING,
 income UNKNOWN,
@@ -34,10 +34,10 @@ children ARRAY<
 >
 ) ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.JsonSerde';
 
-LOAD DATA LOCAL INPATH 'examples/users.json' INTO TABLE test;
+LOAD DATA LOCAL INPATH 'users.json' INTO TABLE users_table;
 ```
 
-As you can see, `income` is listed as `UNKNOWN`, because all data is either `null` or not present. You have to edit this before executing it using Hive. 
+As you can see, `income` is listed as `UNKNOWN`, because all data is either `null` or not present. You have to edit this before executing it using Hive.
 
 All the above files are present in the `examples/` directory.
 
