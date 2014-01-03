@@ -10,7 +10,7 @@ Let's say we have the following JSON in the file `users.json`.
 ```json
 {"id":1, "name":"Rok", "income":null, "city":{"name":"Grosuplje", "area":12544}, "children":[{"name":"Matej"}]}
 {"id":2, "name":"Melanija", "children":[]}
-{"id":3, "name":"Simon", "city":{"name":"Velike Lašče", "area":362.2354}, "children":[{"name":"Simonca"},{"name":"Matic", "toy":"Ropotulica"}]}
+{"id":3, "name":"Simon", "city":{"name":"Spodnji Breg", "area":362.2354}, "children":[{"name":"Simonca"},{"name":"Matic", "toy":"Ropotulica"}]}
 ```
 
 Now we run `ruby generate.rb users.json users_table` and we get the following output. The output can then be either copied or redirected to the output file file.
