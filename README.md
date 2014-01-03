@@ -8,9 +8,9 @@ Example
 Let's say we have the following JSON in the file `users.json`.
 
 ```json
-{"id":1, "name":"Rok", "income":null, "city":{"name":"Grosuplje", "area":"12544.4"}, "children":[{"name":"Matej"}]}
+{"id":1, "name":"Rok", "income":null, "city":{"name":"Grosuplje", "area":12544}, "children":[{"name":"Matej"}]}
 {"id":2, "name":"Melanija", "children":[]}
-{"id":3, "name":"Simon", "city":{"name":"Spodnji breg", "area":"12362.2354"}, "children":[{"name":"Simonca"},{"name":"Matic", "toy":"Ropotulica"}]}
+{"id":3, "name":"Simon", "city":{"name":"Velike Lašče", "area":362.2354}, "children":[{"name":"Simonca"},{"name":"Matic", "toy":"Ropotulica"}]}
 ```
 
 Now we run `ruby generate.rb users.json users_table` and we get the following output. The output can then be either copied or redirected to the output file file.
@@ -45,7 +45,7 @@ Schema requirements
 ---
 
 - JSON has to be valid, one record per line
-- Data in the same column has to be of the same or compatible type (`INT` and `DOUBLE` are compatible, data is cast to the greater type), otherwise you get a mismatch error:
+- Data in the same column has to be of the same or compatible type (`INT` and `DOUBLE` are compatible (as can be seen from the example), `STRING` and `BOOL` are not), otherwise you get a mismatch error:
 
 ```
 generate.rb:79:in `merge': Mismatch: boolean, string (RuntimeError)
