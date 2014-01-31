@@ -51,6 +51,13 @@ Schema requirements
 generate.rb:79:in `merge': Mismatch: boolean, string (RuntimeError)
 ```
 
+Your suggestions
+---
+
+If you have any suggestions or feature requests, please open a new ticket or mail me directly: github@rok-kralj.net
+
+Your feedback is really appreciated. Please recommend this project to your friends to ease their efforts.
+
 System requirements
 ---
 
