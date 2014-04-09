@@ -112,11 +112,11 @@ private
 			[ if var.empty?
 				nil
 			else
-				obj = type var.first
-				var.drop(1).each { |el|
-					obj = merge obj, type(el)
+				var.map { |el|
+					type el
+				}.reduce { |obj, el|
+					merge obj, el
 				}
-				obj
 			end ]
 		end
 	end
