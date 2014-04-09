@@ -35,6 +35,9 @@ class Generator
 private
 
 	RANK = [:tinyint, :smallint, :int, :bigint, :double]
+	RANK.each.with_index { |rank, i|
+		self.const_set rank.upcase, i
+	}
 
 	def out(data, i = 0, key = nil)
 		pad = "\t" * i
@@ -89,18 +92,18 @@ private
 		when Integer
 			case var
 			when -128..127
-				0 # tinyint
+				TINYINT
 			when -32768..32767
-				1 # smallint
+				SMALLINT
 			when -2147483648..2147483647
-				2 # int
+				INT
 			when -9223372036854775808..9223372036854775807
-				3 # bigint
+				BIGINT
 			else
-				4 # double
+				DOUBLE
 			end
 		when Float
-			4 # double
+			DOUBLE
 		when Hash
 			Hash[ var.map { |k, v|
 				[ k, type(v) ]
