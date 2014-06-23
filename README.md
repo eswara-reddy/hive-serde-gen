@@ -1,3 +1,15 @@
+Deprecation Warning!
+===
+
+This project is deprecated in favor of a newer iteration, written in Scala.
+
+* Since it's written in scala, it's much faster.
+* It runs on the JVM, you don't have to install Ruby.
+* Gives much more detailed Exceptions. You immediately know what went wrong and where.
+* Is more precise about the datatypes. Doesn't use `STRING` if `VARCHAR(100)` suffices. Similarly about the numeric types.
+
+You can access it here: https://github.com/strelec/hive-serde-schema-gen
+
 hive-serde-gen
 ==============
 
